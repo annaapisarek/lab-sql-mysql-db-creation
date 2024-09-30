@@ -1,5 +1,11 @@
 #DROP DATABASE lab_mysql;
 CREATE DATABASE IF NOT EXISTS lab_mysql;
+DROP TABLE IF EXISTS Branches;
+DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS Salesperson;
+DROP TABLE IF EXISTS Cars;
+DROP TABLE IF EXISTS Invoices;
+DROP TABLE IF EXISTS Orders;
 USE lab_mysql;
 
 CREATE TABLE Branches (
@@ -53,7 +59,7 @@ CREATE TABLE Orders (
     Customer_ID VARCHAR(11) NOT NULL,
     Salesperson_ID VARCHAR(11) NOT NULL,
     Invoice_ID VARCHAR(11) NOT NULL,
-    Car_Id VARCHAR(11) NOT NULL,
+    Car_ID VARCHAR(11) NOT NULL,
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
     FOREIGN KEY (Salesperson_ID) REFERENCES Salesperson(Salesperson_ID),
     FOREIGN KEY (Invoice_ID) REFERENCES Invoices(Invoice_ID),
